@@ -1,0 +1,3 @@
+web: gunicorn -b 0.0.0.0:5001 app1:app
+web2: gunicorn -b 0.0.0.0:5002 app2:app
+web3: gunicorn -b 0.0.0.0:5003 app3:app

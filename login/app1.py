@@ -188,7 +188,7 @@ def predict():
 if __name__ == '__main__':
     # Train and save the model if not already done
     # train_and_save_model()
-    app.run(port=5000, debug=True)
+    app.run(host='0.0.0.0',port=5000, debug=True)
 
 
 

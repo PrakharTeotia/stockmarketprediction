@@ -1,0 +1,4 @@
+web: gunicorn login.app1:app
+web2: gunicorn login.app2:app
+web3: gunicorn login.app3:app
+

@@ -1,4 +1,0 @@
-web: gunicorn app1:app
-web2: gunicorn app2:app
-web3: gunicorn app3:app
-

@@ -20,9 +20,9 @@ from flask import Flask, request, render_template, jsonify
 import os
 
 # Initialize Flask app
-app = Flask(__name__)
+app1 = Flask(__name__)
 # cache = Cache(app, config={'CACHE_TYPE': 'SimpleCache', 'CACHE_DEFAULT_TIMEOUT': 300})
-CORS(app)
+CORS(app1)
 
 # Constants
 MODEL_PATH = 'login/lstmpricepred.h5'
@@ -115,12 +115,12 @@ def get_prediction(ticker):
         raise
 
 
-@app.route('/')
+@app1.route('/')
 def home():
     return render_template('index1.html')
 
 # Route to handle prediction and return result
-@app.route('/predict', methods=['POST'])
+@app1.route('/predict', methods=['POST'])
 # @cache.cached(timeout=300, query_string=True)  # Cache for 5 minutes
 
 def predict():
@@ -188,7 +188,7 @@ def predict():
 if __name__ == '__main__':
     # Train and save the model if not already done
     # train_and_save_model()
-    app.run(host='0.0.0.0',port=5000, debug=True)
+    app1.run(host='0.0.0.0',port=5000, debug=True)
 
 
 

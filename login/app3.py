@@ -11,19 +11,19 @@ matplotlib.use('Agg')  # Set Matplotlib to non-interactive backend
 from flask_cors import CORS
 
 # Initialize the Flask app
-app = Flask(__name__)
-CORS(app)
+app3 = Flask(__name__)
+CORS(app3)
 # Initialize the FinBERT sentiment analysis pipeline
 _sentiment_analysis = pipeline("sentiment-analysis", model="ProsusAI/finbert")
 
 # Define the home route
-@app.route('/')
+@app3.route('/')
 def index():
     # return 'hi'
     return render_template('index3.html')  # Simple HTML form to accept ticker input
 
 # Define the route for sentiment analysis
-@app.route('/analyze', methods=['POST'])
+@app3.route('/analyze', methods=['POST'])
 def analyze():
     print("Analyze route hit!")  # Debug print
     # return render_template('results.html')
@@ -73,4 +73,4 @@ def analyze():
 
 # Run the app
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5002, debug=True)
+    app3.run(host='0.0.0.0',port=5002, debug=True)

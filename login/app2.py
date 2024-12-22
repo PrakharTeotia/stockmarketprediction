@@ -19,9 +19,9 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 
 # Initialize Flask app
-app = Flask(__name__)
+app2 = Flask(__name__)
 # cache = Cache(app, config={'CACHE_TYPE': 'SimpleCache', 'CACHE_DEFAULT_TIMEOUT': 300})
-CORS(app)
+CORS(app2)
 # Constants for model paths
 MODEL_PATH_LSTM = 'login/pricetrend.h5'
 SCALER_PATH = 'login/scaler.pkl'
@@ -180,7 +180,7 @@ def get_prediction_lstm(ticker):
 
 
 # Route for the home page
-@app.route('/')
+@app2.route('/')
 def home():
 
         # return 'Hello, world!'
@@ -189,7 +189,7 @@ def home():
 
 
 
-@app.route('/predict_lstm', methods=['POST'])
+@app2.route('/predict_lstm', methods=['POST'])
 # @cache.cached(timeout=300, query_string=True)  # Cache for 5 minutes
 
 def predict_lstm_route():
@@ -270,4 +270,4 @@ def predict_lstm_route():
 
    # Running the Flask app
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5001, debug=True)
+    app2.run(host='0.0.0.0',port=5001, debug=True)
